@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#051510">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>ذکر — آرامش دل</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=Amiri+Quran&family=Lalezar&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="bg">
+  <div class="orb orb-a"></div>
+  <div class="orb orb-b"></div>
+  <div class="orb orb-c"></div>
+  <div class="stars" id="stars"></div>
+</div>
+
+<main class="app">
+
+  <!-- هدر -->
+  <header class="header">
+    <div class="logo">
+      <div class="logo-mark">ذ</div>
+      <div>
+        <h1>ذکر</h1>
+        <p class="subtitle">آرامش دل در یاد خدا</p>
+      </div>
+    </div>
+    <div class="date" id="date"></div>
+  </header>
+
+  <!-- تب: خانه -->
+  <section class="tab active" id="tab-home">
+    <div class="hero glass">
+      <div class="bism">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+      <div class="ayah-mini">
+        <p class="arabic-mini">أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ</p>
+        <p class="persian-mini">آگاه باشید که تنها با یاد خدا دل‌ها آرام می‌گیرد.</p>
+        <span class="ref">رعد — ۲۸</span>
+      </div>
+    </div>
+
+    <div class="quick-grid">
+      <button class="quick glass" data-go="ayat">
+        <div class="quick-icon">📖</div>
+        <span>آیات</span>
+      </button>
+      <button class="quick glass" data-go="doa">
+        <div class="quick-icon">🤲</div>
+        <span>ادعیه هفته</span>
+      </button>
+      <button class="quick glass" data-go="salawat">
+        <div class="quick-icon">🌿</div>
+        <span>صلوات‌شمار</span>
+      </button>
+      <button class="quick glass" data-go="tasbih">
+        <div class="quick-icon">📿</div>
+        <span>تسبیح</span>
+      </button>
+    </div>
+
+    <div class="quote glass">
+      <p class="quote-ar">﴿ فَاذْكُرُونِي أَذْكُرْكُمْ ﴾</p>
+      <p class="quote-fa">پس مرا یاد کنید تا شما را یاد کنم.</p>
+      <span class="ref">بقره — ۱۵۲</span>
+    </div>
+  </section>
+
+  <!-- تب: آیات -->
+  <section class="tab" id="tab-ayat">
+    <div class="verse-card glass">
+      <div class="verse-head">
+        <span class="badge">سوره نمل — آیه ۶۲</span>
+      </div>
+      <p class="arabic">
+        أَمَّن يُجِيبُ الْمُضْطَرَّ إِذَا دَعَاهُ وَيَكْشِفُ السُّوءَ
+        وَيَجْعَلُكُمْ خُلَفَاءَ الْأَرْضِ ۗ أَإِلَٰهٌ مَّعَ اللَّهِ ۚ
+        قَلِيلًا مَّا تَذَكَّرُونَ
+      </p>
+      <div class="divider-line"></div>
+      <p class="persian">
+        یا آن کیست که دعای درمانده را، هنگامی که او را می‌خواند، اجابت می‌کند
+        و آسیب را برطرف می‌سازد و شما را جانشینان زمین قرار می‌دهد؟
+        آیا با خدا معبود دیگری است؟ چه اندک پند می‌گیرید.
+      </p>
+      <span class="ref">ترجمه فولادوند</span>
+    </div>
+
+    <div class="verse-card glass">
+      <div class="verse-head">
+        <span class="badge">آیت‌الکرسی — سوره بقره، آیه ۲۵۵</span>
+      </div>
+      <p class="arabic">
+        اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ
+        لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ
+        لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ
+        مَن ذَا الَّذِي يَشْفَعُ عِندَهُ إِلَّا بِإِذْنِهِ ۚ
+        يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ
+        وَلَا يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ
+        وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۚ
+        وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ
+      </p>
+      <div class="divider-line"></div>
+      <p class="persian">
+        خداوند، هیچ معبودی جز او نیست؛ زنده و پایدار است. نه خواب او را فرا می‌گیرد و نه چرت.
+        آنچه در آسمان‌ها و آنچه در زمین است از اوست. کیست آن که جز به فرمان او نزد او شفاعت کند؟
+        آنچه پیش روی آنان و آنچه پشت سرشان است را می‌داند، و به چیزی از علم او احاطه نمی‌یابند
+        مگر آنچه خود بخواهد. کرسی او آسمان‌ها و زمین را در برگرفته، و نگهداری آنها بر او گران نیست؛
+        و اوست بلندمرتبه بزرگ.
+      </p>
+      <span class="ref">ترجمه فولادوند</span>
+    </div>
+  </section>
+
+  <!-- تب: ادعیه -->
+  <section class="tab" id="tab-doa">
+    <div class="today-badge glass">
+      <span>امروز:</span>
+      <strong id="todayName">—</strong>
+    </div>
+
+    <div class="verse-card glass highlight" id="todayDua">
+      <div class="verse-head">
+        <span class="badge" id="todayBadge">دعای امروز</span>
+      </div>
+      <p class="arabic" id="todayDuaAr"></p>
+      <div class="divider-line"></div>
+      <p class="persian" id="todayDuaFa"></p>
+    </div>
+
+    <h3 class="section-title">دعای روزهای هفته</h3>
+    <div class="week-list" id="weekList"></div>
+  </section>
+
+  <!-- تب: صلوات -->
+  <section class="tab" id="tab-salawat">
+    <div class="counter-card glass">
+      <div class="counter-stats">
+        <div>
+          <span class="num" id="salawatSession">۰</span>
+          <small>این نشست</small>
+        </div>
+        <div>
+          <span class="num" id="salawatToday">۰</span>
+          <small>امروز</small>
+        </div>
+        <div>
+          <span class="num" id="salawatTotal">۰</span>
+          <small>مجموع</small>
+        </div>
+      </div>
+
+      <button class="salawat-btn" id="salawatBtn" aria-label="صلوات">
+        <span class="ring ring-1"></span>
+        <span class="ring ring-2"></span>
+        <span class="inner">
+          <span class="salawat-text">صَلَوَات</span>
+          <span class="hint">ضربه بزن</span>
+        </span>
+      </button>
+
+      <p class="salawat-ar">اللَّهُمَّ صَلِّ عَلَىٰ مُحَمَّدٍ وَآلِ مُحَمَّدٍ</p>
+
+      <div class="counter-actions">
+        <button class="ghost-btn" id="resetSession">صفر کردن نشست</button>
+        <button class="ghost-btn danger" id="resetAll">پاک کردن همه</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- تب: تسبیح -->
+  <section class="tab" id="tab-tasbih">
+    <div class="counter-card glass">
+      <div class="counter-stats">
+        <div>
+          <span class="num" id="tasbihCount">۰</span>
+          <small>ذکر</small>
+        </div>
+        <div>
+          <span class="num" id="tasbihRound">۰</span>
+          <small>دور (۳۳)</small>
+        </div>
+      </div>
+
+      <div class="dhikr-pills">
+        <button class="pill active" data-dhikr="سُبْحَانَ اللَّهِ">سبحان‌الله</button>
+        <button class="pill" data-dhikr="الْحَمْدُ لِلَّهِ">الحمدلله</button>
+        <button class="pill" data-dhikr="اللَّهُ أَكْبَرُ">الله‌اکبر</button>
+        <button class="pill" data-dhikr="لَا إِلَٰهَ إِلَّا اللَّهُ">لا اله الا الله</button>
+      </div>
+
+      <button class="salawat-btn tasbih-btn" id="tasbihBtn">
+        <span class="ring ring-1"></span>
+        <span class="ring ring-2"></span>
+        <span class="inner">
+          <span class="salawat-text" id="dhikrText">سُبْحَانَ اللَّهِ</span>
+          <span class="hint">ضربه بزن</span>
+        </span>
+      </button>
+
+      <div class="counter-actions">
+        <button class="ghost-btn" id="resetTasbih">صفر کردن</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- منوی پایین -->
+<nav class="tabbar">
+  <button class="tab-btn active" data-tab="home">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+    <span>خانه</span>
+  </button>
+  <button class="tab-btn" data-tab="ayat">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4z"/><path d="M20 4h-7a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h8z"/></svg>
+    <span>آیات</span>
+  </button>
+  <button class="tab-btn" data-tab="doa">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg>
+    <span>ادعیه</span>
+  </button>
+  <button class="tab-btn" data-tab="salawat">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+    <span>صلوات</span>
+  </button>
+  <button class="tab-btn" data-tab="tasbih">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="3.5" r="1.2"/><circle cx="20.5" cy="12" r="1.2"/><circle cx="12" cy="20.5" r="1.2"/><circle cx="3.5" cy="12" r="1.2"/></svg>
+    <span>تسبیح</span>
+  </button>
+</nav>
+
+<script src="app.js"></script>
+</body>
+</html>
