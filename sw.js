@@ -1,5 +1,5 @@
-const CACHE = 'zekr-v3';
-const FONT_CACHE = 'zekr-fonts-v2';
+const CACHE = 'zekr-v4';
+const FONT_CACHE = 'zekr-fonts-v4';
 
 const ASSETS = [
   './',
