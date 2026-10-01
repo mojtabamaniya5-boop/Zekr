@@ -1,0 +1,326 @@
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+
+:root{
+  --bg:#04120c;
+  --bg-2:#062018;
+  --text:#eafff5;
+  --muted:#7fb8a1;
+  --primary:#10b981;
+  --primary-2:#059669;
+  --accent:#a7f3d0;
+  --gold:#d4af37;
+  --gold-2:#f7d774;
+  --danger:#f43f5e;
+  --glass:rgba(255,255,255,.05);
+  --glass-strong:rgba(255,255,255,.08);
+  --brd:rgba(167,243,208,.15);
+  --brd-strong:rgba(167,243,208,.28);
+}
+
+html,body{height:100%}
+body{
+  font-family:'Vazirmatn',system-ui,-apple-system,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100dvh;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  -webkit-user-select:none;user-select:none;
+}
+
+/* ============ پس‌زمینه ============ */
+.bg{position:fixed;inset:0;overflow:hidden;z-index:0;pointer-events:none;
+  background:radial-gradient(ellipse at top,#0a2a1d 0%,#04120c 55%,#020906 100%)}
+.orb{position:absolute;border-radius:50%;filter:blur(100px);opacity:.5;animation:drift 26s ease-in-out infinite}
+.orb-a{width:460px;height:460px;background:radial-gradient(circle,#10b981,transparent 70%);top:-160px;right:-140px}
+.orb-b{width:400px;height:400px;background:radial-gradient(circle,#0d9488,transparent 70%);bottom:-160px;left:-140px;animation-delay:-9s}
+.orb-c{width:340px;height:340px;background:radial-gradient(circle,#65a30d,transparent 70%);top:45%;left:25%;opacity:.32;animation-delay:-17s}
+@keyframes drift{
+  0%,100%{transform:translate(0,0) scale(1)}
+  33%{transform:translate(40px,-30px) scale(1.14)}
+  66%{transform:translate(-30px,30px) scale(.92)}
+}
+.stars{position:absolute;inset:0;opacity:.55}
+.stars span{
+  position:absolute;width:2px;height:2px;border-radius:50%;
+  background:#a7f3d0;box-shadow:0 0 6px #a7f3d0;
+  animation:twinkle 3.5s ease-in-out infinite;
+}
+@keyframes twinkle{0%,100%{opacity:.15;transform:scale(.7)}50%{opacity:1;transform:scale(1.3)}}
+
+/* ============ اپ ============ */
+.app{
+  position:relative;z-index:1;
+  max-width:540px;margin:0 auto;
+  padding:20px 18px 120px;
+  display:flex;flex-direction:column;gap:16px;
+  min-height:100dvh;
+}
+
+/* ============ هدر ============ */
+.header{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:4px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-mark{
+  width:48px;height:48px;border-radius:15px;
+  display:grid;place-items:center;
+  font-family:'Lalezar','Vazirmatn',sans-serif;
+  font-size:26px;color:#fff;line-height:1;padding-bottom:4px;
+  background:linear-gradient(135deg,#059669,#10b981,#34d399);
+  box-shadow:0 8px 26px -8px rgba(16,185,129,.85),inset 0 1px 0 rgba(255,255,255,.35);
+}
+.header h1{font-family:'Lalezar','Vazirmatn',sans-serif;font-size:22px;font-weight:400;letter-spacing:.5px;color:#eafff5}
+.subtitle{font-size:11px;color:var(--muted);margin-top:1px}
+.date{
+  font-size:10.5px;color:var(--accent);
+  background:var(--glass);border:1px solid var(--brd);
+  padding:6px 11px;border-radius:99px;white-space:nowrap;
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+}
+
+/* ============ گلس ============ */
+.glass{
+  background:var(--glass);
+  border:1px solid var(--brd);
+  backdrop-filter:blur(18px) saturate(140%);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);
+  border-radius:20px;
+}
+
+/* ============ تب‌ها ============ */
+.tab{display:none;flex-direction:column;gap:16px;animation:fade .4s ease}
+.tab.active{display:flex}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* ============ هیرو خانه ============ */
+.hero{padding:22px 18px;text-align:center;position:relative;overflow:hidden}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 0%,rgba(16,185,129,.18),transparent 70%);
+  pointer-events:none;
+}
+.bism{
+  font-family:'Amiri Quran',serif;
+  font-size:20px;color:var(--gold-2);
+  margin-bottom:14px;letter-spacing:.5px;
+  text-shadow:0 0 22px rgba(212,175,55,.35);
+  direction:rtl;
+}
+.ayah-mini .arabic-mini{
+  font-family:'Amiri Quran',serif;
+  font-size:22px;line-height:2;color:var(--accent);
+  margin-bottom:10px;direction:rtl;
+}
+.persian-mini{font-size:13.5px;color:#c6e6d8;line-height:1.9;margin-bottom:8px}
+.ref{font-size:10.5px;color:var(--muted);letter-spacing:.3px}
+
+/* ============ گرید دسترسی سریع ============ */
+.quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.quick{
+  padding:16px 12px;display:flex;flex-direction:column;align-items:center;gap:8px;
+  cursor:pointer;font-family:inherit;color:var(--text);font-size:13px;font-weight:500;
+  transition:transform .2s,border-color .25s,background .25s;
+}
+.quick:hover,.quick:active{border-color:var(--brd-strong);background:var(--glass-strong)}
+.quick:active{transform:scale(.96)}
+.quick-icon{font-size:26px;filter:drop-shadow(0 0 14px rgba(16,185,129,.5))}
+
+/* ============ نقل قول ============ */
+.quote{padding:18px;text-align:center}
+.quote-ar{
+  font-family:'Amiri Quran',serif;
+  font-size:22px;color:var(--gold-2);direction:rtl;
+  margin-bottom:8px;line-height:2;
+}
+.quote-fa{font-size:13px;color:#c6e6d8;line-height:1.9;margin-bottom:6px}
+
+/* ============ کارت آیه ============ */
+.verse-card{padding:20px 18px;position:relative;overflow:hidden}
+.verse-card.highlight{
+  border-color:var(--brd-strong);
+  box-shadow:0 0 0 1px rgba(16,185,129,.15),0 18px 50px -20px rgba(16,185,129,.4);
+}
+.verse-card.highlight::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(16,185,129,.09),transparent 60%);
+  pointer-events:none;
+}
+.verse-head{margin-bottom:14px;display:flex;justify-content:center}
+.badge{
+  display:inline-block;font-size:11px;font-weight:500;
+  color:var(--accent);background:rgba(16,185,129,.12);
+  border:1px solid rgba(16,185,129,.3);
+  padding:5px 12px;border-radius:99px;
+}
+.arabic{
+  font-family:'Amiri Quran',serif;
+  font-size:20px;line-height:2.35;
+  color:#f0fff8;direction:rtl;text-align:center;
+  padding:0 4px;
+  text-shadow:0 0 30px rgba(16,185,129,.12);
+}
+.divider-line{
+  height:1px;margin:18px 0;
+  background:linear-gradient(90deg,transparent,rgba(167,243,208,.3),transparent);
+  position:relative;
+}
+.divider-line::after{
+  content:'❁';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  background:var(--bg);padding:0 10px;color:var(--primary);
+  font-size:12px;
+}
+.persian{font-size:14px;line-height:2.05;color:#d3efe2;text-align:justify;padding:0 2px}
+.verse-card .ref{display:block;text-align:center;margin-top:14px}
+
+/* ============ ادعیه ============ */
+.today-badge{
+  padding:10px 14px;display:flex;justify-content:center;gap:8px;
+  font-size:13px;align-items:center;
+}
+.today-badge strong{color:var(--accent);font-weight:600}
+
+.section-title{
+  font-family:'Lalezar','Vazirmatn',sans-serif;
+  font-size:16px;font-weight:400;color:var(--accent);
+  margin:6px 2px 0;letter-spacing:.4px;
+}
+
+.week-list{display:flex;flex-direction:column;gap:10px}
+.week-item{
+  padding:16px 16px;cursor:pointer;
+  transition:border-color .25s,background .25s,transform .2s;
+}
+.week-item:hover{border-color:var(--brd-strong);background:var(--glass-strong)}
+.week-item:active{transform:scale(.985)}
+.week-item .week-head{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-bottom:6px;
+}
+.week-item .week-name{font-size:14px;font-weight:600;color:#eafff5}
+.week-item .week-title{font-size:11.5px;color:var(--accent)}
+.week-item .week-ar{
+  font-family:'Amiri Quran',serif;
+  font-size:17px;color:var(--gold-2);direction:rtl;line-height:2;text-align:center;
+  margin-top:8px;
+}
+.week-item .week-fa{
+  font-size:12.5px;color:#c6e6d8;line-height:1.9;margin-top:8px;text-align:justify;
+  max-height:0;overflow:hidden;transition:max-height .45s ease,margin .35s;
+}
+.week-item.open .week-fa{max-height:400px;margin-top:10px}
+.week-item .chev{
+  width:14px;height:14px;color:var(--muted);transition:transform .3s;
+}
+.week-item.open .chev{transform:rotate(180deg)}
+
+/* ============ صلوات شمار ============ */
+.counter-card{padding:22px 18px;display:flex;flex-direction:column;align-items:center;gap:20px}
+.counter-stats{
+  display:flex;justify-content:space-around;align-items:center;
+  width:100%;padding:14px 0;
+  border-bottom:1px solid var(--brd);
+}
+.counter-stats>div{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1}
+.counter-stats .num{
+  font-family:'Lalezar','Vazirmatn',sans-serif;
+  font-size:26px;color:var(--accent);line-height:1;
+  text-shadow:0 0 20px rgba(16,185,129,.6);
+}
+.counter-stats small{font-size:11px;color:var(--muted)}
+
+.salawat-btn{
+  position:relative;width:220px;height:220px;border-radius:50%;
+  border:none;cursor:pointer;background:transparent;
+  display:grid;place-items:center;font-family:inherit;
+  transition:transform .15s;
+}
+.salawat-btn:active{transform:scale(.95)}
+.salawat-btn .inner{
+  width:170px;height:170px;border-radius:50%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
+  background:radial-gradient(circle at 30% 25%,#10b981 0%,#047857 45%,#065f46 100%);
+  box-shadow:
+    0 20px 50px -14px rgba(16,185,129,.7),
+    inset 0 2px 0 rgba(255,255,255,.28),
+    inset 0 -10px 20px rgba(0,0,0,.25);
+  color:#fff;
+}
+.salawat-text{
+  font-family:'Lalezar','Vazirmatn',sans-serif;
+  font-size:28px;line-height:1;letter-spacing:1px;
+  text-shadow:0 2px 8px rgba(0,0,0,.35);
+}
+.hint{font-size:11px;opacity:.75}
+.ring{
+  position:absolute;border-radius:50%;border:1.5px solid rgba(167,243,208,.45);
+  pointer-events:none;
+}
+.ring-1{width:200px;height:200px;animation:pulseRing 2.6s ease-out infinite}
+.ring-2{width:200px;height:200px;animation:pulseRing 2.6s ease-out infinite 1.3s}
+@keyframes pulseRing{
+  0%{transform:scale(.85);opacity:.85}
+  100%{transform:scale(1.15);opacity:0}
+}
+
+.salawat-btn.pressed .inner{
+  background:radial-gradient(circle at 30% 25%,#34d399 0%,#10b981 45%,#047857 100%);
+  box-shadow:
+    0 22px 60px -14px rgba(52,211,153,.95),
+    inset 0 2px 0 rgba(255,255,255,.35),
+    inset 0 -10px 20px rgba(0,0,0,.2);
+}
+
+.salawat-ar{
+  font-family:'Amiri Quran',serif;
+  font-size:18px;color:var(--gold-2);direction:rtl;text-align:center;line-height:2;
+  padding:0 6px;
+}
+
+.counter-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;width:100%}
+.ghost-btn{
+  background:transparent;border:1px solid var(--brd);
+  color:var(--muted);font-family:inherit;font-size:12px;
+  padding:9px 16px;border-radius:99px;cursor:pointer;
+  transition:all .2s;
+}
+.ghost-btn:hover{color:var(--accent);border-color:var(--brd-strong)}
+.ghost-btn.danger:hover{color:var(--danger);border-color:rgba(244,63,94,.4)}
+
+/* تسبیح */
+.dhikr-pills{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.pill{
+  background:var(--glass);border:1px solid var(--brd);
+  color:var(--muted);font-family:inherit;font-size:12px;
+  padding:8px 14px;border-radius:99px;cursor:pointer;
+  transition:all .2s;
+}
+.pill.active{background:rgba(16,185,129,.18);color:var(--accent);border-color:var(--brd-strong)}
+.tasbih-btn .inner{width:160px;height:160px}
+.tasbih-btn{width:200px;height:200px}
+.tasbih-btn .ring{width:180px;height:180px}
+.tasbih-btn .salawat-text{font-size:20px}
+
+/* ============ تب‌بار ============ */
+.tabbar{
+  position:fixed;bottom:0;left:0;right:0;z-index:50;
+  display:flex;justify-content:space-around;align-items:center;
+  padding:10px 8px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(4,18,12,.82);
+  backdrop-filter:blur(22px) saturate(160%);
+  -webkit-backdrop-filter:blur(22px) saturate(160%);
+  border-top:1px solid var(--brd);
+}
+.tab-btn{
+  flex:1;background:transparent;border:none;cursor:pointer;
+  display:flex;flex-direction:column;align-items:center;gap:4px;
+  color:var(--muted);font-family:inherit;font-size:10px;
+  padding:6px 2px;transition:color .25s;position:relative;
+}
+.tab-btn svg{width:22px;height:22px;transition:transform .25s}
+.tab-btn.active{color:var(--accent)}
+.tab-btn.active svg{transform:translateY(-2px);filter:drop-shadow(0 0 8px rgba(16,185,129,.7))}
+.tab-btn.active::after{
+  content:'';position:absolute;top:-1px;width:22px;height:2px;border-radius:2px;
+  background:linear-gradient(90deg,#10b981,#a7f3d0);
+  box-shadow:0 0 10px #10b981;
+}
