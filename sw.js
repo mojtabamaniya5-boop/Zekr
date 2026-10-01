@@ -1,5 +1,5 @@
-const CACHE = 'zekr-v1';
-const FONT_CACHE = 'zekr-fonts-v1';
+const CACHE = 'zekr-v2';
+const FONT_CACHE = 'zekr-fonts-v2';
 
 const ASSETS = [
   './',
@@ -14,13 +14,11 @@ const FONT_URLS = [
   'https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=Amiri+Quran&family=Lalezar&display=swap'
 ];
 
-/* نصب: کش فایل‌های اصلی و CSS فونت */
 self.addEventListener('install', e => {
   e.waitUntil((async () => {
     const c = await caches.open(CACHE);
     await Promise.all(ASSETS.map(u => c.add(u).catch(()=>{})));
 
-    // CSS فونت‌ها را بگیر و خود فایل‌های woff2 رو هم کش کن
     const fc = await caches.open(FONT_CACHE);
     for (const url of FONT_URLS){
       try{
@@ -69,7 +67,6 @@ self.addEventListener('fetch', e => {
     return;
   }
 
-  // بقیه: کش اول، شبکه بعد
   e.respondWith((async () => {
     const cache = await caches.open(CACHE);
     const cached = await cache.match(e.request);
