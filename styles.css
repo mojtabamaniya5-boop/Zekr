@@ -151,6 +151,7 @@ body{
   color:var(--accent);background:rgba(16,185,129,.12);
   border:1px solid rgba(16,185,129,.3);
   padding:5px 12px;border-radius:99px;
+  text-align:center;
 }
 .arabic{
   font-family:'Amiri Quran',serif;
@@ -171,6 +172,18 @@ body{
 }
 .persian{font-size:14px;line-height:2.05;color:#d3efe2;text-align:justify;padding:0 2px}
 .verse-card .ref{display:block;text-align:center;margin-top:14px}
+
+/* شماره آیه */
+.ayah-num{
+  width:36px;height:36px;border-radius:50%;
+  display:grid;place-items:center;
+  margin:0 auto 12px;
+  font-family:'Lalezar','Vazirmatn',sans-serif;
+  font-size:14px;color:var(--gold-2);
+  background:rgba(212,175,55,.1);
+  border:1px solid rgba(212,175,55,.35);
+  box-shadow:0 0 14px rgba(212,175,55,.25);
+}
 
 /* ============ ادعیه ============ */
 .today-badge{
@@ -200,16 +213,16 @@ body{
 .week-item .week-title{font-size:11.5px;color:var(--accent)}
 .week-item .week-ar{
   font-family:'Amiri Quran',serif;
-  font-size:17px;color:var(--gold-2);direction:rtl;line-height:2;text-align:center;
+  font-size:16px;color:var(--gold-2);direction:rtl;line-height:2;text-align:center;
   margin-top:8px;
 }
 .week-item .week-fa{
   font-size:12.5px;color:#c6e6d8;line-height:1.9;margin-top:8px;text-align:justify;
-  max-height:0;overflow:hidden;transition:max-height .45s ease,margin .35s;
+  max-height:0;overflow:hidden;transition:max-height .55s ease,margin .35s;
 }
-.week-item.open .week-fa{max-height:400px;margin-top:10px}
+.week-item.open .week-fa{max-height:2000px;margin-top:10px}
 .week-item .chev{
-  width:14px;height:14px;color:var(--muted);transition:transform .3s;
+  width:14px;height:14px;color:var(--muted);transition:transform .3s;flex-shrink:0;
 }
 .week-item.open .chev{transform:rotate(180deg)}
 
